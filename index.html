@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiene Saki Abdallah – Portfolio, étudiant en L3 Informatique</title>
+<meta name="description" content="Portfolio de Tiene Saki Abdallah, étudiant en Licence 3 Informatique à l’université Nangui Abrogoua (Abidjan).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F8FC; --ink:#101828; --muted:#4A5668; --line:#D3DDEA;
+  --blue:#1D4ED8; --on-blue:#fff; --orange:#E8741A; --card:#fff;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0E1624;--ink:#E8EEF7;--muted:#A6B2C4;--line:#243247;--blue:#7AA2FF;--on-blue:#0E1624;--orange:#F59B4B;--card:#142033}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:var(--blue)}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;margin-bottom:1.5rem}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0 0 1rem;max-width:68ch}
+section{padding:4.5rem 1.25rem}
+.wrap{max-width:1040px;margin:0 auto}
+.muted{color:var(--muted)}
+
+/* En-tête */
+header.top{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.7rem 1.25rem}
+.logo{font:800 1.05rem var(--head);text-decoration:none;color:var(--ink)}
+nav ul{display:flex;gap:1.1rem;flex-wrap:wrap;list-style:none;margin:0;padding:0}
+nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--blue);text-decoration:underline;text-underline-offset:4px}
+
+/* Hero sur papier quadrillé */
+.hero{background-color:var(--paper);
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:32px 32px;padding-top:4rem;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,7vw,4.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:1rem}
+.lead{font-size:1.2rem;max-width:34ch;background:var(--paper);display:inline-block;padding:.2rem .4rem .2rem 0}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}
+.btn{display:inline-block;padding:.75rem 1.3rem;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--blue)}
+.btn.main{background:var(--blue);color:var(--on-blue)}
+.btn.alt{background:var(--paper);color:var(--blue)}
+.btn:hover{filter:brightness(1.08)}
+.graph{width:100%;height:auto;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.graph .e{stroke:var(--line);stroke-width:2;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.6s .2s ease-out forwards}
+.graph .n rect{fill:var(--card);stroke:var(--blue);stroke-width:1.8;transition:fill .2s}
+.graph .n text{fill:var(--ink);font:600 13px var(--body);text-anchor:middle}
+.graph .n:hover rect{fill:var(--orange);stroke:var(--orange)}
+.graph .n:hover text{fill:#101828}
+.graph .c{fill:var(--blue)}
+.graph .ct{fill:var(--on-blue);font:800 15px var(--head);text-anchor:middle}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* À propos */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem}
+.facts{margin:0;padding:1.25rem 1.4rem;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.facts dt{font-weight:600;font-size:.9rem;color:var(--muted)}
+.facts dd{margin:0 0 .9rem}
+.facts dd:last-child{margin-bottom:0}
+
+/* Parcours */
+.timeline{list-style:none;margin:0;padding:0 0 0 1.6rem;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding-bottom:1.6rem}
+.timeline li::before{content:"";position:absolute;left:-2.1rem;top:.45rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--paper);border:3px solid var(--blue)}
+.timeline li.now::before{background:var(--orange);border-color:var(--orange)}
+.when{font-weight:600;color:var(--blue);font-size:.95rem}
+details{margin-top:.5rem;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.6rem 1rem;max-width:68ch}
+summary{cursor:pointer;font-weight:600}
+details p{margin:.6rem 0 0}
+
+/* Compétences */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.group{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.2rem}
+.group h3{margin-bottom:.8rem}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;list-style:none;margin:0;padding:0}
+.tags li{border:1.5px solid var(--blue);border-radius:99px;padding:.15rem .75rem;font-size:.92rem}
+.tags li.learn{border-style:dashed;border-color:var(--orange)}
+.legend{margin-top:1.2rem;font-size:.92rem}
+
+/* Travaux */
+.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.work{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;padding:1.3rem;display:flex;flex-direction:column;gap:.6rem}
+.work p{margin:0;font-size:1rem}
+.work .tech{font-size:.9rem;color:var(--muted);margin-top:auto}
+.work a{font-weight:600}
+
+/* Contact et pied de page */
+.contact{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mail{font:800 clamp(1.2rem,4vw,2rem) var(--head);word-break:break-all}
+footer{padding:1.5rem 1.25rem;text-align:center;font-size:.92rem;color:var(--muted);
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px}
+footer span{background:var(--paper);padding:.2rem .5rem}
+
+@media (max-width:760px){
+  .hero .wrap,.about{grid-template-columns:1fr}
+  section{padding:3rem 1.25rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .graph .e{animation:none;stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#accueil">Tiene Saki Abdallah</a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#travaux">Travaux</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+  <div class="wrap">
+    <div>
+      <h1>Tiene Saki Abdallah</h1>
+      <p class="lead">Étudiant en Licence 3 Informatique à l’université Nangui Abrogoua, à Abidjan. Je construis mes bases en algorithmique, réseaux, bases de données et développement web.</p>
+      <div class="btns">
+        <a class="btn main" href="#travaux">Voir mes travaux</a>
+        <a class="btn alt" href="#contact">Me contacter</a>
+      </div>
+    </div>
+    <svg class="graph" viewBox="0 0 420 360" role="img" aria-label="Graphe reliant ma Licence 3 Informatique à mes domaines d’étude : graphes, réseaux, programmation orientée objet, bases de données, signal, assembleur 68000 et web.">
+      <g>
+        <line class="e" x1="210" y1="180" x2="210" y2="50"/><line class="e" x1="210" y1="180" x2="312" y2="99"/>
+        <line class="e" x1="210" y1="180" x2="337" y2="209"/><line class="e" x1="210" y1="180" x2="266" y2="297"/>
+        <line class="e" x1="210" y1="180" x2="154" y2="297"/><line class="e" x1="210" y1="180" x2="83" y2="209"/>
+        <line class="e" x1="210" y1="180" x2="108" y2="99"/>
+        <line class="e" x1="210" y1="50" x2="312" y2="99"/><line class="e" x1="312" y1="99" x2="337" y2="209"/>
+        <line class="e" x1="337" y1="209" x2="266" y2="297"/><line class="e" x1="266" y1="297" x2="154" y2="297"/>
+        <line class="e" x1="83" y1="209" x2="108" y2="99"/><line class="e" x1="108" y1="99" x2="210" y2="50"/>
+      </g>
+      <circle class="c" cx="210" cy="180" r="36"/>
+      <text class="ct" x="210" y="176">L3</text><text class="ct" x="210" y="194">Info</text>
+      <g class="n"><rect x="164" y="35" width="92" height="30" rx="15"/><text x="210" y="54">Graphes</text></g>
+      <g class="n"><rect x="266" y="84" width="92" height="30" rx="15"/><text x="312" y="103">Réseaux</text></g>
+      <g class="n"><rect x="291" y="194" width="92" height="30" rx="15"/><text x="337" y="213">POO</text></g>
+      <g class="n"><rect x="220" y="282" width="92" height="30" rx="15"/><text x="266" y="301">Données</text></g>
+      <g class="n"><rect x="108" y="282" width="92" height="30" rx="15"/><text x="154" y="301">Signal</text></g>
+      <g class="n"><rect x="37" y="194" width="92" height="30" rx="15"/><text x="83" y="213">Assembleur</text></g>
+      <g class="n"><rect x="62" y="84" width="92" height="30" rx="15"/><text x="108" y="103">Web</text></g>
+    </svg>
+  </div>
+</section>
+
+<section id="apropos">
+  <div class="wrap about">
+    <div>
+      <h2>À propos</h2>
+      <p>Je suis étudiant en Licence 3 Informatique à l’université Nangui Abrogoua. J’ai commencé par un tronc commun Mathématiques-Informatique en L1, puis choisi l’option informatique en L2.</p>
+      <p>Mes études m’ont donné une base solide en mathématiques (analyse, algèbre linéaire, probabilités) et en programmation structurée en C. Aujourd’hui, j’élargis ce socle avec la théorie des graphes, les réseaux, la programmation orientée objet, les bases de données et le web.</p>
+      <p>Ce portfolio rassemble mon parcours, mes compétences et les travaux que je réalise pendant mes études.</p>
+    </div>
+    <dl class="facts">
+      <dt>Formation actuelle</dt><dd>Licence 3 Informatique</dd>
+      <dt>Université</dt><dd>Nangui Abrogoua, Abidjan</dd>
+      <dt>Baccalauréat</dt><dd>Série D, 2020</dd>
+      <dt>Langue du portfolio</dt><dd>Français</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="parcours" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2>Parcours</h2>
+    <ol class="timeline">
+      <li class="now">
+        <span class="when">En cours</span>
+        <h3>Licence 3 Informatique, université Nangui Abrogoua</h3>
+        <details>
+          <summary>Domaines étudiés</summary>
+          <p>Théorie des graphes, réseaux informatiques, programmation orientée objet, bases de données, traitement du signal, assembleur Motorola 68000 et développement web.</p>
+        </details>
+      </li>
+      <li>
+        <span class="when">2024 – 2025</span>
+        <h3>Licence 2 Mathématiques-Informatique, option informatique</h3>
+        <details>
+          <summary>Contenu de l’année</summary>
+          <p>Approfondissement des matières de L1 et spécialisation progressive. En mathématiques : analyse avancée, algèbre linéaire approfondie, probabilités et statistiques, introduction à la recherche opérationnelle. En informatique : programmation structurée, introduction aux bases de données relationnelles et aux systèmes d’exploitation.</p>
+        </details>
+      </li>
+      <li>
+        <span class="when">2023 – 2024</span>
+        <h3>Licence 1 Mathématiques-Informatique</h3>
+        <details>
+          <summary>Contenu de l’année</summary>
+          <p>Tronc commun scientifique. En mathématiques : analyse 1, algèbre 1 et logique mathématique. En informatique : introduction à l’algorithmique et à la programmation en langage C, architecture des ordinateurs.</p>
+        </details>
+      </li>
+      <li>
+        <span class="when">2020</span>
+        <h3>Baccalauréat série D</h3>
+        <p class="muted">Collège Aimé Césaire de Yopougon</p>
+      </li>
+      <li>
+        <span class="when">2016</span>
+        <h3>Brevet d’Étude du Premier Cycle (BEPC)</h3>
+        <p class="muted">Collège Aimé Césaire de Yopougon</p>
+      </li>
+      <li>
+        <span class="when">2012</span>
+        <h3>Certificat d’Études Primaires Élémentaires (CEPE)</h3>
+        <p class="muted">Église Saint-Pierre de Yopougon</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="competences">
+  <div class="wrap">
+    <h2>Compétences</h2>
+    <div class="skills">
+      <div class="group">
+        <h3>Programmation</h3>
+        <ul class="tags">
+          <li>Algorithmique</li><li>Langage C</li><li>Programmation structurée</li>
+          <li class="learn">HTML</li><li class="learn">Programmation orientée objet</li><li class="learn">Assembleur 68000</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Mathématiques</h3>
+        <ul class="tags">
+          <li>Analyse</li><li>Algèbre linéaire</li><li>Logique mathématique</li><li>Probabilités et statistiques</li><li>Recherche opérationnelle</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Données et graphes</h3>
+        <ul class="tags">
+          <li>Bases de données relationnelles</li><li>Modèle conceptuel (Merise)</li>
+          <li class="learn">Normalisation (BCNF)</li><li class="learn">Théorie des graphes</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Systèmes et réseaux</h3>
+        <ul class="tags">
+          <li>Systèmes d’exploitation</li><li>Architecture des ordinateurs</li><li class="learn">Cisco Packet Tracer</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Signal et outils</h3>
+        <ul class="tags">
+          <li>VS Code</li><li>GitHub</li><li>Terminal</li><li class="learn">MATLAB (Signal Analyzer)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="legend muted">Bordure pleine : compétence acquise en cours. Bordure en pointillés : en cours d’apprentissage.</p>
+  </div>
+</section>
+
+<section id="travaux" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <h2>Travaux universitaires</h2>
+    <p class="muted">Quelques exercices et activités réalisés pendant mes études. Remplace les liens par tes dépôts GitHub.</p>
+    <div class="works">
+      <article class="work">
+        <h3>Représentations d’un graphe</h3>
+        <p>Passage d’un même graphe d’une matrice d’adjacence à des listes d’adjacence, puis à une liste d’arêtes, avec comparaison des usages de chaque représentation.</p>
+        <span class="tech">Théorie des graphes, L3</span>
+        <!-- TODO : remplace # par le lien GitHub de ce travail -->
+        <a href="#">Voir le code</a>
+      </article>
+      <article class="work">
+        <h3>Modélisation MCD et normalisation</h3>
+        <p>Construction d’un modèle conceptuel de données selon Merise (malades et maladies), puis vérification de la forme normale de Boyce-Codd.</p>
+        <span class="tech">Bases de données, Merise, BCNF</span>
+        <!-- TODO : remplace # par le lien de ce travail -->
+        <a href="#">Voir le détail</a>
+      </article>
+      <article class="work">
+        <h3>Analyse de signaux sismiques</h3>
+        <p>Application de filtres passe-bas et passe-bande à des signaux sismiques (séisme de Sumatra, mont Wrangell) pour isoler les fréquences utiles.</p>
+        <span class="tech">MATLAB, Signal Analyzer</span>
+        <!-- TODO : remplace # par le lien de ce travail -->
+        <a href="#">Voir le détail</a>
+      </article>
+      <article class="work">
+        <h3>Réseau simulé</h3>
+        <p>Exercices de conception et de configuration de petits réseaux dans le simulateur Cisco Packet Tracer.</p>
+        <span class="tech">Cisco Packet Tracer</span>
+        <!-- TODO : remplace # par le lien de ce travail -->
+        <a href="#">Voir le détail</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Expérience professionnelle</h2>
+    <ol class="timeline">
+      <li>
+        <span class="when">Octobre – novembre 2024</span>
+        <h3>Agent du kit biométrique de recensement</h3>
+        <p class="muted">Commission Électorale Indépendante (CEI)</p>
+      </li>
+      <li>
+        <span class="when">Novembre – décembre 2022</span>
+        <h3>Agent formulaire</h3>
+        <p class="muted">Commission Électorale Indépendante (CEI)</p>
+      </li>
+    </ol>
+    <!-- TODO : ajoute ici une ligne sur tes missions et ce que tu en as appris -->
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Un stage, un projet ou une question ? Écris-moi, je réponds volontiers.</p>
+    <a class="mail" href="mailto:tieneabdallahsaki@gmail.com">tieneabdallahsaki@gmail.com</a>
+  </div>
+</section>
+</main>
+
+<footer><span>© 2026 Tiene Saki Abdallah, université Nangui Abrogoua</span></footer>
+
+</body>
+</html>
