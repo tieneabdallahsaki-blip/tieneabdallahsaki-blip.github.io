@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head> 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!---Dit au navigateur d’un téléphone d’utiliser la vraie largeur de l’écran (width=device-width) avec
+un zoom de départ de 1 --->
+<title>Tiene Saki Abdallah – Portfolio, étudiant en L3 Informatique</title>
+<meta name="description" content="Portfolio de Tiene Saki Abdallah, étudiant en Licence 3 Informatique à l’université Nangui Abrogoua (Abidjan).">
+<!---Il resume la page, google l'affiche souvant sous le titre -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--- Il demande au navigateur d'ouvrire à l'avance une connexion avec Google Front-->
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<!---Tous les visiteur n'ont pas ces polices installer, donc on fait en sorte qu'il soit la même chose partout -->
+<link rel="stylesheet" href="style.css">
+<!---Il relie le index.html auu style.css -->
+</head>
+<body>
+
+<!---le 'header' est le bandeau d'introduction -->
+<!---'class="top"', cest la barre du haut, on lui donne un nom que le css peut retrouver -->
+<header class="top">
+  <div class="wrap"> <!---on ouvre un boite dans le 'heauder' et on le limite à 1080px avec la classe 'wrap' -->
+    <a class="logo" href="#accueil">Tiene Saki Abdallah</a>
+    <!---Affiche mon nom sous forme de lien. Cliquer deçu m'envoie à l'acceuil -->
+    <nav aria-label="Navigation principale">
+      <!--- 'nav' ouvre la zone de navigation, et 'ul' donne une liste non ordonnée du menu sous forme de lien-->
+      <!---"arie-label" donne un nom à la zone pour les lecteurs -->
+      <ul>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#travaux">Travaux</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main> <!---il Ouvre le contenue principal de la page -->
+<section class="hero" id="accueil">
+  <div class="wrap">
+    <div>
+      <h1>Tiene Saki Abdallah</h1>
+      <p class="lead">Étudiant en Licence 3 Informatique à l’université Nangui Abrogoua, à Abidjan. Je construis mes bases en algorithmique, réseaux, bases de données et développement web.</p>
+      <!---class="lead" permet de mettre mon paragraphe en plus grand que les autres paragraphes -->
+      <div class="btns">
+        <a class="btn main" href="#travaux">Voir mes travaux</a>
+        <a class="btn alt" href="#contact">Me contacter</a>
+      </div> <!---deux liens sous la forme de boutons -->
+    </div>
+    <svg class="graph" viewBox="0 0 420 360" role="img" aria-label="Graphe reliant ma Licence 3 Informatique à mes domaines d’étude : graphes, réseaux, programmation orientée objet, bases de données, signal, assembleur 68000 et web.">
+      <!--- Ouvre un dessin SVG : un graphe. "viewBox="0 0 420 360" fixe le repère interne
+du dessin (largeur 420, hauteur 360). role="img" et aria-label le décrivent par écrit. -->
+      <g>
+        <line class="e" x1="210" y1="180" x2="210" y2="50"/><line class="e" x1="210" y1="180" x2="312" y2="99"/>
+        <line class="e" x1="210" y1="180" x2="337" y2="209"/><line class="e" x1="210" y1="180" x2="266" y2="297"/>
+        <line class="e" x1="210" y1="180" x2="154" y2="297"/><line class="e" x1="210" y1="180" x2="83" y2="209"/>
+        <line class="e" x1="210" y1="180" x2="108" y2="99"/>
+        <line class="e" x1="210" y1="50" x2="312" y2="99"/><line class="e" x1="312" y1="99" x2="337" y2="209"/>
+        <line class="e" x1="337" y1="209" x2="266" y2="297"/><line class="e" x1="266" y1="297" x2="154" y2="297"/>
+        <line class="e" x1="83" y1="209" x2="108" y2="99"/><line class="e" x1="108" y1="99" x2="210" y2="50"/>
+      </g>
+      <circle class="c" cx="210" cy="180" r="36"/>
+      <text class="ct" x="210" y="176">L3</text><text class="ct" x="210" y="194">Info</text>
+      <g class="n"><rect x="164" y="35" width="92" height="30" rx="15"/><text x="210" y="54">Graphes</text></g>
+      <g class="n"><rect x="266" y="84" width="92" height="30" rx="15"/><text x="312" y="103">Réseaux</text></g>
+      <g class="n"><rect x="291" y="194" width="92" height="30" rx="15"/><text x="337" y="213">POO</text></g>
+      <g class="n"><rect x="220" y="282" width="92" height="30" rx="15"/><text x="266" y="301">Données</text></g>
+      <g class="n"><rect x="108" y="282" width="92" height="30" rx="15"/><text x="154" y="301">Signal</text></g>
+      <g class="n"><rect x="37" y="194" width="92" height="30" rx="15"/><text x="83" y="213">Assembleur</text></g>
+      <g class="n"><rect x="62" y="84" width="92" height="30" rx="15"/><text x="108" y="103">Web</text></g>
+    </svg>
+  </div>
+</section>
+
+<section id="apropos">
+  <div class="wrap about">
+    <!---on ouvre une section puis une boite avec deux classe -->
+    <div><!---Une dive pour la colonne de gauche -->
+      <h2>À propos</h2>
+      <p>Je suis étudiant en Licence 3 Informatique à l’université Nangui Abrogoua. J’ai commencé par un tronc commun Mathématiques-Informatique en L1, puis choisi l’option informatique en L2.</p>
+      <p>Mes études m’ont donné une base solide en mathématiques (analyse, algèbre linéaire, probabilités) et en programmation structurée en C. Aujourd’hui, j’élargis ce socle avec la théorie des graphes, les réseaux, la programmation orientée objet, les bases de données et le web.</p>
+      <p>Ce portfolio rassemble mon parcours, mes compétences et les travaux que je réalise pendant mes études.</p>
+    </div>
+    <dl class="facts">
+      <dt>Formation actuelle</dt><dd>Licence 3 Informatique</dd>
+      <dt>Université</dt><dd>Nangui Abrogoua, Abidjan</dd>
+      <dt>Baccalauréat</dt><dd>Série D, 2020</dd>
+      <dt>Langue du portfolio</dt><dd>Français</dd>
+    </dl>
+    <!---Une liste de définition "dl", le terme "dt" et sa description "dd" -->
+  </div>
+</section>
+
+<section id="parcours" class="alt">
+  <div class="wrap">
+    <h2>Parcours</h2>
+    <ol class="timeline">
+      <li class="now">
+        <span class="when">En cours</span>
+        <h3>Licence 3 Informatique, université Nangui Abrogoua</h3>
+        <details>
+          <summary>Domaines étudiés</summary>
+          <p>Théorie des graphes, réseaux informatiques, programmation orientée objet, bases de données, traitement du signal, assembleur Motorola 68000 et développement web.</p>
+        </details> <!--- <details> et <summary> fabriquent un bloc qui se déplie -->
+      </li>
+      <li>
+        <span class="when">2024 – 2025</span>
+        <h3>Licence 2 Mathématiques-Informatique, option informatique</h3>
+        <details>
+          <summary>Contenu de l’année</summary>
+          <p>Approfondissement des matières de L1 et spécialisation progressive. En mathématiques : analyse avancée, algèbre linéaire approfondie, probabilités et statistiques. En informatique : programmation structurée, introduction aux bases de données relationnelles et aux systèmes d’exploitation.</p>
+        </details>
+      </li>
+      <li>
+        <span class="when">2023 – 2024</span>
+        <h3>Licence 1 Mathématiques-Informatique</h3>
+        <details>
+          <summary>Contenu de l’année</summary>
+          <p>Tronc commun scientifique. En mathématiques : analyse 1, algèbre 1 et logique mathématique. En informatique : introduction à l’algorithmique et à la programmation en langage C, architecture des ordinateurs.</p>
+        </details>
+      </li>
+      <li>
+        <span class="when">2020</span>
+        <h3>Baccalauréat série D</h3>
+        <p class="muted">Collège Aimé Césaire de Yopougon</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="competences">
+  <div class="wrap">
+    <h2>Compétences</h2>
+    <div class="skills"> <!--- skills est une grille (ligne 77 de style.css) qui répartit les cartes selon la largeur de l’écran -->
+      <div class="group"> <!---Un carte avec dive.group -->
+        <h3>Programmation</h3>
+        <ul class="tags">
+          <li>Algorithmique</li><li>Langage C</li><li>Programmation structurée</li>
+          <li class="learn">HTML</li><li class="learn">Programmation orientée objet</li><li class="learn">Assembleur 68000</li>
+        </ul> <!--- ici, les 'li' simple sont les compétances acquises -->
+      </div>
+      <div class="group">
+        <h3>Mathématiques</h3>
+        <ul class="tags">
+          <li>Analyse</li><li>Algèbre linéaire</li><li>Logique mathématique</li><li>Probabilités et statistiques</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Données et graphes</h3>
+        <ul class="tags">
+          <li>Bases de données relationnelles</li><li class="learn">Modèle conceptuel (Merise)</li>
+          <li class="learn">Normalisation (BCNF)</li><li class="learn">Théorie des graphes</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Systèmes et réseaux</h3>
+        <ul class="tags">
+          <li>Systèmes d’exploitation</li><li>Architecture des ordinateurs</li><li class="learn">Cisco Packet Tracer</li>
+        </ul>
+      </div>
+      <div class="group">
+        <h3>Signal et outils</h3>
+        <ul class="tags">
+          <li>VS Code</li><li>GitHub</li><li>Terminal</li><li class="learn">MATLAB (Signal Analyzer)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="legend muted">Bordure pleine : notions étudiées en cours ou mises en pratique. Bordure en pointillés : apprentissage en cours.</p>
+    <!---<p class="legend muted"> explique les bordure -->
+      <!---legend muted cumule deux classes : la taille de legend (ligne 83 de style.css) et la couleur
+            grise de muted (ligne 24) -->
+  </div>
+</section>
+
+<section id="travaux" class="alt">
+  <div class="wrap">
+    <h2>Travaux universitaires</h2>
+    <p class="muted">Une sélection de projets et d’exercices réalisés pendant mes études.</p>
+    <div class="works">
+      <article class="work">
+        <h3>Programmation orientée objet</h3>
+        <p>Apprentissage de la programmation orientée objet en Python : classes, objets, encapsulation, héritage et polymorphisme, mis en pratique par de petits projets.</p>
+        <span class="tech">Python, POO</span>
+        <a href="https://github.com/tieneabdallahsaki-blip/POO-Python">Voir le code</a>
+      </article>
+      <article class="work">
+        <h3>Modélisation MCD et normalisation</h3>
+        <p>Construction d’un modèle conceptuel de données selon Merise (malades et maladies), puis vérification de la forme normale de Boyce-Codd.</p>
+        <span class="tech">Bases de données, Merise, BCNF</span>
+        <details>
+          <summary>Voir le détail</summary>
+          <p>Le travail couvre la représentation des entités et de leurs relations, puis l’analyse des dépendances fonctionnelles afin de vérifier la normalisation du modèle.</p>
+        </details>
+      </article>
+      <article class="work"> <!---article est une composition autonome -->
+        <h3>Analyse de signaux sismiques</h3>
+        <p>Application de filtres passe-bas et passe-bande à des signaux sismiques (séisme de Sumatra, mont Wrangell) pour isoler les fréquences utiles.</p>
+        <span class="tech">MATLAB, Signal Analyzer</span>
+        <a href="https://github.com/tieneabdallahsaki-blip/signal-sismique-matlab">Voir le détail</a>
+      </article>
+      <article class="work">
+        <h3>Réseau simulé</h3>
+        <p>Exercices de conception et de configuration de petits réseaux dans le simulateur Cisco Packet Tracer.</p>
+        <span class="tech">Cisco Packet Tracer</span>
+        <a href="https://github.com/tieneabdallahsaki-blip/reseau-packet-tracer">Voir le détail</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Expérience professionnelle</h2>
+    <ol class="timeline">
+      <li>
+        <span class="when">2025</span>
+        <h3>Président de bureau de vote</h3>
+        <p class="muted">Élection présidentielle</p>
+        <p>Supervision du scrutin et du dépouillement, puis établissement du procès-verbal.</p>
+      </li>
+      <li>
+        <span class="when">Octobre – novembre 2024</span>
+        <h3>Agent du kit biométrique de recensement</h3>
+        <p class="muted">Commission Électorale Indépendante (CEI)</p>
+      </li>
+      <li>
+        <span class="when">Novembre – décembre 2022</span>
+        <h3>Agent formulaire</h3>
+        <p class="muted">Commission Électorale Indépendante (CEI)</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="cv">
+  <div class="wrap cv-card">
+    <div>
+      <h2>Mon CV</h2>
+      <p class="muted">Consultez mon parcours et mes compétences en détail.</p>
+    </div>
+    <div class="btns">
+      <a class="btn main" href="cv-tiene-saki-abdallah.pdf" target="_blank" rel="noopener">Consulter mon CV</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Un stage, un projet ou une question ? Écris-moi, je réponds volontiers.</p>
+    <a class="mail" href="mailto:tieneabdallahsaki@gmail.com">tieneabdallahsaki@gmail.com</a>
+  </div>
+</section>
+</main>
+
+<footer><span>© 2026 Tiene Saki Abdallah, université Nangui Abrogoua</span></footer>
+
+</body>
+</html>

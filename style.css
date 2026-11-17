@@ -1,0 +1,117 @@
+/* paper est le fond, --ink le texte, --muted le gris, --line les
+traits, --blue et --orange les couleurs d’accent, --on-blue le texte posé sur du bleu et --card le fond
+des cartes */
+
+:root{
+  --paper:#F5F8FC; --ink:#101828; --muted:#4A5668; --line:#D3DDEA;
+  --blue:#1d1dd8; --on-blue:#fff; --orange:#E8741A; --card:#fff;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0E1624;--ink:#E8EEF7;--muted:#A6B2C4;--line:#243247;--blue:#7AA2FF;--on-blue:#0E1624;--orange:#F59B4B;--card:#142033}
+}
+/*  *{box-sizing:border-box} désigne tous les éléments et fait que la largeur d’un élément inclut son
+      espace intérieur et sa bordure */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px} /* Sur <html>,on active le défilement progressif quand on clique sur un lien interne */
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+/*  margin:0 supprime la marge par défaut, puis le fond, la
+couleur du texte et la police viennent des variables */
+a{color:var(--blue)} /*on colore tous les liens en bleau */
+a:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+/*on Ajoute un contour orange épais autour d’un lien ou d’un <summary> quand on clique dessus */
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;margin-bottom:1.5rem}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0 0 1rem;max-width:68ch}
+section{padding:4.5rem 1.25rem}
+.wrap{max-width:1040px;margin:0 auto}
+.muted{color:var(--muted)}
+
+/* En-tête */
+header.top{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:.7rem 1.25rem}
+.logo{font:800 1.05rem var(--head);text-decoration:none;color:var(--ink)}
+nav ul{display:flex;gap:1.1rem;flex-wrap:wrap;list-style:none;margin:0;padding:0}
+nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--blue);text-decoration:underline;text-underline-offset:4px}
+
+/* Sections à fond de carte (Parcours et Travaux) */
+.alt{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* Hero sur papier quadrillé */
+.hero{background-color:var(--paper);
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:32px 32px;padding-top:4rem;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,7vw,4.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:1rem}
+.lead{font-size:1.2rem;max-width:34ch;background:var(--paper);display:inline-block;padding:.2rem .4rem .2rem 0}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.4rem}
+.btn{display:inline-block;padding:.75rem 1.3rem;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--blue)}
+.btn.main{background:var(--blue);color:var(--on-blue)}
+.btn.alt{background:var(--paper);color:var(--blue)}
+.btn:hover{filter:brightness(1.08)}
+.cv-card{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:12px;padding:1.5rem}
+.cv-card h2{margin-bottom:.6rem}
+.cv-card p{margin-bottom:0}
+.cv-card .btns{margin-top:0}
+.graph{width:100%;height:auto;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.graph .e{stroke:var(--line);stroke-width:2;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.6s .2s ease-out forwards}
+.graph .n rect{fill:var(--card);stroke:var(--blue);stroke-width:1.8;transition:fill .2s}
+.graph .n text{fill:var(--ink);font:600 13px var(--body);text-anchor:middle}
+.graph .n:hover rect{fill:var(--orange);stroke:var(--orange)}
+.graph .n:hover text{fill:#101828}
+.graph .c{fill:var(--blue)}
+.graph .ct{fill:var(--on-blue);font:800 15px var(--head);text-anchor:middle}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* À propos */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem}
+.facts{margin:0;padding:1.25rem 1.4rem;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.facts dt{font-weight:600;font-size:.9rem;color:var(--muted)}
+.facts dd{margin:0 0 .9rem}
+.facts dd:last-child{margin-bottom:0}
+
+/* Parcours */
+.timeline{list-style:none;margin:0;padding:0 0 0 1.6rem;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding-bottom:1.6rem}
+.timeline li::before{content:"";position:absolute;left:-2.1rem;top:.45rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--paper);border:3px solid var(--blue)}
+.timeline li.now::before{background:var(--orange);border-color:var(--orange)}
+.when{font-weight:600;color:var(--blue);font-size:.95rem}
+details{margin-top:.5rem;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.6rem 1rem;max-width:68ch}
+summary{cursor:pointer;font-weight:600}
+details p{margin:.6rem 0 0}
+
+/* Compétences */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.group{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.2rem}
+.group h3{margin-bottom:.8rem}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem;list-style:none;margin:0;padding:0}
+.tags li{border:1.5px solid var(--blue);border-radius:1.1rem;padding:.15rem .75rem;font-size:.92rem}
+.tags li.learn{border-style:dashed;border-color:var(--orange)}
+.legend{margin-top:1.2rem;font-size:.92rem}
+
+/* Travaux */
+.works{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.work{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:12px;padding:1.3rem;display:flex;flex-direction:column;gap:.6rem}
+.work p{margin:0;font-size:1rem}
+.work .tech{font-size:.9rem;color:var(--muted);margin-top:auto}
+.work a{font-weight:600}
+
+/* Contact et pied de page */
+.contact{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mail{font:800 clamp(1.2rem,4vw,2rem) var(--head);word-break:break-all}
+footer{padding:1.5rem 1.25rem;text-align:center;font-size:.92rem;color:var(--muted);
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px}
+footer span{background:var(--paper);padding:.2rem .5rem}
+
+@media (max-width:760px){
+  .hero .wrap,.about{grid-template-columns:1fr}
+  .cv-card{align-items:flex-start;flex-direction:column}
+  section{padding:3rem 1.25rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .graph .e{animation:none;stroke-dashoffset:0}
+}
